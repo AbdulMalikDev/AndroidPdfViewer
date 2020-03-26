@@ -24,6 +24,7 @@ public class DefaultScrollHandle extends RelativeLayout implements ScrollHandle 
     private float relativeHandlerMiddle = 0f;
 
     protected TextView textView;
+    protected Button button;
     protected Context context;
     private boolean inverted;
     private PDFView pdfView;
@@ -46,6 +47,7 @@ public class DefaultScrollHandle extends RelativeLayout implements ScrollHandle 
         this.context = context;
         this.inverted = inverted;
         textView = new TextView(context);
+        buton = new Button(context);
         setVisibility(INVISIBLE);
         setTextColor(Color.BLACK);
         setTextSize(DEFAULT_TEXT_SIZE);
@@ -91,6 +93,7 @@ public class DefaultScrollHandle extends RelativeLayout implements ScrollHandle 
         tvlp.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
 
         addView(textView, tvlp);
+        addView(button, tvlp);
 
         lp.addRule(align);
         pdfView.addView(this, lp);
